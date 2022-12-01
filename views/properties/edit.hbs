@@ -1,0 +1,16 @@
+<h1>Property Details</h1>
+<form method="post" class="form-ele">
+        <fieldset>
+        <label for="name" class="col-2">Name: </label>
+        <input name="name" id="name" value="{{property.name}}" required />
+    </fieldset>
+    <fieldset>
+        <label for="location" class="col-2">Loaction: </label>
+        <input name="location" id="location" value="{{property.location}}"  required />
+    </fieldset>
+    <fieldset>
+        <label for="address" class="col-2">Address: </label>
+        <textarea name="address" id="address" value="{{property.address}}"  ></textarea>
+    </fieldset>
+        <button class="btn btn-secondary">Save</button>
+</form>

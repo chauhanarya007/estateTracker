@@ -1,0 +1,19 @@
+<h1>Properties</h1>
+<section class="row">
+    {{#each properties}}
+        <div class="card col-3 m-2">
+            <div class="card-body text-center h-100">
+                <h4 class="card-title">{{this.name}}</h4>
+                <h5>{{this.location}}</h5>
+                <p>{{this.address}}</p>
+
+                <div class="card-links">
+                    <a href="/properties/edit/{{this._id}}">Edit</a>
+                    <a href="/properties/delete/{{this._id}}" class="text-danger" onclick="return confirmDelete()">Delete</a>
+                </div>
+            
+            </div>
+        </div>
+    {{/each}}
+</section>
+    <a class="btn btn-secondary" href="/properties/create">List a New Property</a>

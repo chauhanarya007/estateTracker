@@ -1,0 +1,32 @@
+<h1>Appointment Details</h1>
+<form method="post" class="form-ele">
+        <fieldset>
+            <label for="name" class="col-2">Full Name: </label>
+            <input name="name" id="name" required value="{{appointment.name}}" >
+        </fieldset>
+        <fieldset>
+            <label for="property" class="col-2">Property: </label>
+            <select name="property" id="property" required>
+                {{#each properties}}
+                    {{selectCorrectOption this.name ../appointment.property}}
+                {{/each}}
+                </select>
+        </fieldset>
+        <fieldset>
+            <label for="date" class="col-2">Date: </label>
+            <input type="date" name="date" id="date" value="{{appointment.date}}">
+        </fieldset>
+        <fieldset>
+            <label for="email" class="col-2">Email: </label>
+            <input type="email" name="email" id="email" value="{{appointment.email}}">
+        </fieldset>
+        <fieldset>
+            <label for="phone" class="col-2">Phone Number: </label>
+            <input type="tel" name="phone" id="phone" value="{{appointment.phone}}">
+        </fieldset>
+        <fieldset>
+            <label for="description" class="col-2">Additional Notes: </label>
+            <textarea name="description" id="description" value="{{appointment.decription}}"></textarea>         
+        </fieldset>
+        <button class="btn btn-secondary offset-2">Save</button>
+</form>

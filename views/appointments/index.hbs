@@ -1,0 +1,25 @@
+<h1>Appointments</h1>
+
+
+<section class="row">
+    {{#each appointments}}
+    <div class="card col-3 m-3" id="card">
+        <div class="card-body text-center h-100">
+            <h4 class="card-title">{{this.name}}</h4>
+            <h6>{{this.region}}</h6>
+            <p>{{this.date}}</p>
+            <p>{{this.email}}</p>
+            <p>{{this.property}}</p>
+            <p>{{this.phone}}</p>
+            <p>{{this.description}}</p>
+            
+                <div class="card-links">
+                    <a href="/appointments/edit/{{this._id}}">Edit</a>
+                    <a href="/appointments/delete/{{this._id}}" class="text-danger"  onclick="return confirmDelete()">Delete</a>
+                </div>
+            
+        </div>
+    </div>
+    {{/each}}
+</section>
+    <a class="btn btn-secondary" href="/appointments/create">Book a New Appointment</a>
