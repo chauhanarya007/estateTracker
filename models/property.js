@@ -11,6 +11,10 @@ var propertySchema = new mongoose.Schema({
         type: String,
         required: 'Location is required'
     },
+    price: {
+        type: String,
+        required: 'Price is required'
+    },
     address: {
         type: String,
         required: 'Property address is required'

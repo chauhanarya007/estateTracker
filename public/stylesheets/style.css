@@ -5,48 +5,121 @@ body {
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
-  background-color: #007bb6;
 }
 .navbar{
-  background-color: #747474;
+  background-color: #EAEAEA;
 }
+.ban-img{
+  height: 450px;
+  width: 500px;
+}
+.ban-section{
+  display: grid;
+  column-gap: 50px;
+  grid-template-columns: 1fr 1fr;
 
+}
+.home-cont > h1{
+  position: absolute;
+  font-size: 170px;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.home-cont > h2{
+  position: absolute;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.home-cont > p{
+  position: absolute;
+  bottom: 20px;
+}
+.home-cont > img{
+  height: auto;
+  width: 7%;
+  position: absolute;
+  right: 10%;
+  top: 17%;
+
+}
+.ban-section > img{
+  padding-left: 50px;
+}
 .container-fluid{
   padding: 20px;
+}
+.form-group > a{
+  text-decoration: none;
+  color: #393a3d;
 }
 
 .pad{
   padding-right: 27px;
 }
 .body-cont{
-  min-height: 400px;
+  min-height: 550px;
   padding: 5%;
+  background-color: #EAEAEA;
+  color: #2B2C30;
 }
-
+.nav-item > a{
+  font-weight: 500;
+}
+.nav-fluid > a{
+  padding-left: 30px;
+}
 #card{
   border: none;
-  background-color: #cbfcff;
+  background-color: #e4e4e4;
+  transition: all 0.5s ease;
+}
+#card:hover{
+  box-shadow: 2px 5px 5px #29afed;
 }
 .card-links > a{
   text-decoration: none;
+  color: #6d6f76;
+}
+.btn-secondary{
+  margin-top: 10px;
 }
 
 .form-ele > *{
   padding: 10px 0;
 }
+.about-img{
+  height:auto;
+  width: 400px;
+  margin-right: 10rem;
+}
+.about-cont{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.about{
+  padding-top: 25%;
+}
 .container-fluid > a > img{
   height: auto;
   width: 6rem;
 }
+/* /////////Scrolbar css */
 
-
-
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #EAEAEA;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #26272b;
+}
 
 /* ////////////////////////////////////////////////////////////////footer/////////////////////////////////// */
 
 .site-footer
 {
-  background-color:#26272b;
+  background-color:#2B2C30;
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;

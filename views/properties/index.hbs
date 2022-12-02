@@ -1,10 +1,11 @@
 <h1>Properties</h1>
 <section class="row">
     {{#each properties}}
-        <div class="card col-3 m-2">
+        <div class="card col-3 m-2" id="card">
             <div class="card-body text-center h-100">
                 <h4 class="card-title">{{this.name}}</h4>
-                <h5>Location: {{this.location}}</h5>
+                <h5>{{this.location}}</h5>
+                <h5>{{this.price}}</h5>
                 <p>{{this.address}}</p>
                 {{#if ../user}}
                 <div class="card-links">
