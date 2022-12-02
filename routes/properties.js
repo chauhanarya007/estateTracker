@@ -1,7 +1,15 @@
 const express = require("express");
 const router = express.Router();
+const passport = require('passport')
 
 const Property = require("../models/property");
+
+function isAuthenticated(req, res, next){
+  if (req.isAuthenticated()){
+    return next()
+  }
+  res.redirect('/auth/login')
+}
 
 router.get("/", (req, res) => {
   Property.find((err, properties) => {
@@ -11,13 +19,14 @@ router.get("/", (req, res) => {
       res.render("properties/index", {
         title: "Properties",
         properties: properties,
+        user: req.user
       });
     }
   });
 });
 
-router.get("/create", (req, res) => {
-  res.render("properties/create", { title: "Add Property" });
+router.get("/create", isAuthenticated, (req, res) => {
+  res.render("properties/create", { title: "Add Property", user: req.user });
 });
 
 router.post("/create", (req, res) => {
@@ -27,12 +36,13 @@ router.post("/create", (req, res) => {
       console.log(err);
     } else {
       res.redirect("/properties");
+      
     }
   });
 });
 
 //delete
-router.get("/delete/:_id", (req, res) => {
+router.get("/delete/:_id", isAuthenticated, (req, res) => {
   Property.remove({ _id: req.params._id }, (err) => {
     if (err) {
       console.log(err);
@@ -43,7 +53,7 @@ router.get("/delete/:_id", (req, res) => {
 });
 
 //edit method
-router.get("/edit/:_id", (req, res) => {
+router.get("/edit/:_id", isAuthenticated, (req, res) => {
   Property.findById(req.params._id, (err, property) => {
     if (err) {
       console.log(err);
@@ -51,13 +61,13 @@ router.get("/edit/:_id", (req, res) => {
       res.render("properties/edit", {
         title: "Property Details",
         property: property,
-        //user: req.user
+        user: req.user
       });
     }
   });
 });
 
-router.post("/edit/:_id", (req, res) => {
+router.post("/edit/:_id", isAuthenticated, (req, res) => {
   Property.findByIdAndUpdate(
     { _id: req.params._id },
     req.body,

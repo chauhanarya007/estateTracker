@@ -8,7 +8,7 @@ body {
   background-color: #007bb6;
 }
 .navbar{
-  background-color: #6E6E6E;
+  background-color: #747474;
 }
 
 .container-fluid{
@@ -33,6 +33,10 @@ body {
 
 .form-ele > *{
   padding: 10px 0;
+}
+.container-fluid > a > img{
+  height: auto;
+  width: 6rem;
 }
 
 
